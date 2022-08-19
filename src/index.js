@@ -13,30 +13,14 @@ function checkWindowSize(width) {
 
 const Component = () => {
   const [windowSize, setWindowSize] = useState(getWindowSize());
-
+  const [openModal, setOpenModal] = useState(checkWindowSize(windowSize.innerWidth))
+  
   useEffect(() => {
     function handleWindowResize() {
       setWindowSize(getWindowSize());
+      setOpenModal(checkWindowSize(windowSize.innerWidth))
     }
-
     window.addEventListener("resize", handleWindowResize);
-
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  }, []);
-
-  const [openModal, setOpenModal] = useState(
-    checkWindowSize(!windowSize.innerWidth)
-  );
-
-  useEffect(() => {
-    function handleWindowResize() {
-      setWindowSize(getWindowSize());
-    }
-
-    window.addEventListener("resize", handleWindowResize);
-
     return () => {
       window.removeEventListener("resize", handleWindowResize);
     };
@@ -44,8 +28,8 @@ const Component = () => {
 
   return (
     <div>
-      width: {windowSize.innerWidth} ~ height: {windowSize.innerHeight}
-      {openModal && <Modal closeModal={setOpenModal} />}
+      Width: {windowSize.innerWidth}
+      {windowSize.innerWidth <= 600 && openModal && <Modal closeModal={setOpenModal} />}
     </div>
   );
 };

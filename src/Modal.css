@@ -1,3 +1,16 @@
+
+.modalContainer {
+  width: 280px;
+  height: 280px;
+  border-radius: 5px;
+  background-color: white;
+  background: linear-gradient(180deg, rgb(255, 255, 255) 55%, #F7F7F7 50%);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
 .modalBackground {
   width: 100vw;
   height: 100vh;
@@ -8,34 +21,28 @@
   align-items: center;
 }
 
-.modalContainer {
-  width: 200px;
-  height: 200px;
-  border-radius: 12px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+.warningImg {
+
+  margin-top: 10px;
   display: flex;
-  flex-direction: column;
-  padding: 25px;
+  justify-content: center;
 }
 
 .modalContainer .title {
   display: inline-block;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   color: red;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: bold;
+  font-size: 20px;
 }
 
-.lowerContainer {
-  background-color: lightgray;
-}
-
-.subtitle {
+.modalContainer .subtitle {
   display: inline-block;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 50px;
   color: black;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
@@ -53,16 +60,19 @@
   cursor: pointer;
 }
 
-.modalContainer .body {
-  flex: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.7rem;
-  text-align: center;
+.buttonX {
+  font-size: 10px;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #dbd4d4;
+  font-weight: bolder;
+  color: #585858;
+  top: 35px;
+  position: absolute;
 }
 
-.modalContainer .footer {
+.footer {
   flex: 20%;
   display: flex;
   justify-content: center;
@@ -70,18 +80,16 @@
 }
 
 .modalContainer .footer button {
-  width: 150px;
-  height: 45px;
+  width: 125px;
+  height: 28px;
   margin: 10px;
   border: none;
-  background-color: crimson;
+  margin-top: 20px;
+  background-color: #FF0127;
   color: white;
   border-radius: 25px;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
   cursor: pointer;
 }
 
-#cancelBtn {
-  background-color: crimson;
-}
